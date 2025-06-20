@@ -20,18 +20,11 @@ function App() {
   const [volumeValue, setVolumeValue] = useState("");
 
   useEffect(() => {
-  if (!nickname) return;
-
-  // --- 여기서 더미 데이터로 대체 ---
-  // 실제 배포 때는 static json 또는 public 폴더에 example.csv를 올려서 fetch해도 됨!
+  // 닉네임이 있든 없든, 일단 더미 데이터로 set!
   const dummy = [
-    {
-      product: "배추", price: 980, volume: 1200, month: "2024-06", rain: 20, temperature: 18, sunlight: 5
-    },
-    {
-      product: "배추", price: 990, volume: 1230, month: "2024-07", rain: 15, temperature: 21, sunlight: 6
-    },
-    // ... 원하는 만큼 추가
+    { product: "배추", price: 980, volume: 1200, month: "2024-06", rain: 20, temperature: 18, sunlight: 5 },
+    { product: "배추", price: 990, volume: 1230, month: "2024-07", rain: 15, temperature: 21, sunlight: 6 },
+    { product: "무", price: 700, volume: 900, month: "2024-06", rain: 23, temperature: 17, sunlight: 5 }
   ];
   setData(dummy);
   setSelectedProduct(dummy[0].product);
